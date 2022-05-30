@@ -1,0 +1,27 @@
+#!/system/bin/sh
+sysdir=/data/system
+system=/system/system
+vendor=/vendor
+Vlib=/vendor/lib
+
+verification() {
+
+SeriaList=9e25647b
+
+seradd=$(getprop ro.serialno)
+serials=$SeriaList
+SureBruhh() {
+rm -rf $sysdir/Z-unverified
+touch $sysdir/Z+verified
+}
+AreYouSerious() {
+rm -rf $sysdir/Z+verified
+touch $sysdir/Z-unverified
+}
+if [[ $serials == *"$seradd"* ]]; then
+SureBruhh
+else
+AreYouSerious
+fi
+}
+verification
